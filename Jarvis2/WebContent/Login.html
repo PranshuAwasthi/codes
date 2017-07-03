@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>  
+<h1><font color="WHITE"><marquee  style="background:Blue" behavior="alternate">Add New Inventory</marquee></font></h1>  
+<form action="SaveServlet" method="post">  
+<table> 
+<tr><td>SNNo:</td><td><input type="text" name="SN.NO" placeholder="SN.NO" required=""/></td></tr>  
+<tr><td>DmsNo:</td><td><input type="text" name="DmsNo" placeholder="DmsNo" required=""/></td></tr>  
+<tr><td>TypeOfPc:</td><td><input type="text" name="TypeOfPc" placeholder="TypeOfPc" required=""/></td></tr>  
+<tr><td>Location:</td><td><input type="text" name="Location" placeholder="Location" required=""/></td></tr>  
+<tr><td>OsInstalled:</td><td><input type="text" name="OsInstalled" placeholder="OsInstalled" required=""/></td></tr> 
+<tr><td>MsOffice:</td><td><input type="text" name="MsOffice" placeholder="MsOffice" required=""/></td></tr> 
+<tr><td>TypeOfNode:</td><td><input type="text" name="Type Of Node" placeholder="Type Of Node" required=""/></td></tr> 
+<tr><td>Ram:</td><td><input type="text" name="Ram" placeholder="Ram" required=""/></td></tr> 
+ 
+<tr><td colspan="2"><input type="submit" value="Save Inventory"/></td></tr>
+<tr><td colspan="2"><input type="reset" value="Reset"/></td></tr>  
+</table>  
+</form>  
+ <br>  
+<a href="ViewServlet">view employees</a>  
+</body>  
+</html>  
+
