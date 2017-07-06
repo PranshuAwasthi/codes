@@ -3,16 +3,81 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+form {
+   
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+       box-sizing: border-box;
+}
+button {
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+   
+    cursor: pointer;
+    width: 50;
+}
+button:hover {
+    opacity: 0.8;
+}
+.cancelbtn {
+    width: auto;
+    padding: 0px ;
+    background-color: #f44336;
+}
+}
+.container {
+    
+}
+span.psw {
+    float: right;
+    
+}
+@media screen and (max-width: 300px) {
+    span.psw {
+       
+       float: none;
+    }
+    .cancelbtn {
+      
+    }
+    
+    
+}
+body {
+    background-image: url("Pic/CL-IMG-0417.jpg;");
+    background-repeat: no-repeat;
+    height:100%;
+     background-size: cover;
+}
+}
+</style>
 </head>
-<body>
-<h1><font color="WHITE"><marquee  style="background:Green" behavior="alternate">Login</marquee></font></h1>
+<body >
+<h1><center><i>Defence Research and Development Organization</i></center></h1>
+<h2><font color="Black">Inventory Database Login</font></h2>
 <form action="HelloServlet" method="post">  
+<div style="width:500px;height:100px;border:1px solid white;">
 <table>   
-<tr><td>Name:</td><td><input type="text" name="name" placeholder="name" required=""/></td></tr>   
+<tr><td>Name:</td><td><input type="text" name="name" placeholder="name" required=""/></td></tr>  <br><br> 
 <tr><td>Password:</td><td><input type="password" name="password" placeholder="password" required=""/></td></tr>   
 </table>
-<input type="submit" value="login">  
-<input type="Reset" value="Reset">
+</div>
+
+<button type="SUBMIT">SUBMIT</button>
+<button type="RESET">RESET</button><br>
+<button type="Register">Register</button>
+<br>
+<input type="checkbox" checked="checked"> Remember me
+
+    <br><span class="psw">Forgot <a href="#">password?</a></span>
+  
+</div>
 </form> 
 </body>
 </html>

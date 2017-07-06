@@ -22,8 +22,8 @@ public class ViewServlet extends HttpServlet {
 		
 		 response.setContentType("text/html");  
 	        PrintWriter out=response.getWriter();  
-	        out.println("<a href='Login.html'>Add New Inventory</a>");  
-	        out.println("<h1 color:red>Inventory  List</h1>");  
+	        out.println("<a href='Second.html'>Add New Inventory</a>");  
+	        out.println("<h1>Inventory  List</h1>");  
 	          
 	        List<EmpDao> list=EmpDto.getAllEmployees();  
 	          

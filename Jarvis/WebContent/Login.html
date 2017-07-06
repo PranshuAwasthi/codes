@@ -4,9 +4,18 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<h1><font color="WHITE"><marquee  style="background:Blue" behavior="alternate">Add New Inventory</marquee></font></h1>  
+<style>
+body {
+    background-image: url("Pic/1wWUigR.jpg;");
+    background-repeat: no-repeat;
+    height:100%;
+     background-size: cover;
+}</style>
+<h1><center><font color="blue">Add New Inventory</center></font></h1>  
+<div style="width:300px;height:250px;border:1px solid black;"> 
  <form action="SaveServlet1"  method="post">  
-<table> 
+<table>
+
 <tr><td>SNNo:</td><td><input type="text" name="SNNo" placeholder="SN.NO" required=""/></td></tr>  
 <tr><td>DmsNo:</td><td><input type="text" name="DmsNo" placeholder="DmsNo" required=""/></td></tr>  
 <tr><td>TypeOfPc:</td><td><input type="text" name="TypeOfPc" placeholder="TypeOfPc" required=""/></td></tr>  
@@ -18,8 +27,9 @@
  <tr><td colspan="2"><input type="submit" value="Save Inventory"/></td></tr> 
 <tr><td colspan="2"><input type="Reset" value="Reset"/></td></tr>  
 </table>   
-</form>   
+</form>  
+</div> 
 <br/>   
-<a href="ViewServlet">View Inventory</a>
+<h2><a href="ViewServlet">View Inventory</a></h2>
 </body>
 </html>

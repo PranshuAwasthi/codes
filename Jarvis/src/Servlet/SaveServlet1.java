@@ -35,7 +35,7 @@ public class SaveServlet1 extends HttpServlet {
 		   String Ram=request.getParameter("Ram");
 		   // String pid=request.getParameter("Ram");  
 		    //int Ram=Integer.parseInt(pid); 
-		    
+		   
 
 		   
 		    EmpDao e=new EmpDao();  
