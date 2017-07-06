@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,59 +13,64 @@ import EmpDto.EmpDto;
 public class EmpDao {
 	
 		  
-	    public static Connection getConnection() 
+	    public static Connection getConnection() throws ClassNotFoundException,SQLException
 	    {  
-	        Connection con=null;  
+	       
+	    Connection con=null;  
+	   
 	        try{
 	        	
 	            Class.forName("com.mysql.jdbc.Driver");
-	    		String url ="jdbc:mysql://localhost:3306/tanu";
-	    String userid="root";
-	    String Password="tanu";
+	            con=DriverManager.getConnection(  
+	            		"jdbc:mysql://localhost:3306/tanu","root","tanu");  
 	    //Step 2 Create connection db 
-	     con=DriverManager.getConnection(url,userid,Password);
-	    //	if(connection!=null){
-	    	//	System.out.println("connection created......");
-	    	//connection.close();
+	  //   con=DriverManager.getConnection(url,userid,Password);
+	  //  if(con!=null){
+	    //		System.out.println("connection created......");
+	    	//con.close();
 	    	
 	    	
-	          }
+	    
+	        }
 	        catch(Exception e){System.out.println(e);}  
 	        return con;  
 	    }  
 	    public static int save(EmpDto e){  
-	        int status=0;  
+	        int status = 0;  
+	        PreparedStatement ps=null;
+	        Connection con=null;
 	        try{  
-	            Connection con=EmpDao.getConnection();  
-	            PreparedStatement ps=con.prepareStatement(  
-	                         "insert into student(SNNo,DmsNo,TypeOfPc,Location,OsInstalled,MsOffice,TypeOfNode,Ram) values (?,?,?,?,?,?,?,?)");  
-	            ps.setInt(1,e.getSNNo());  
+	           con=EmpDao.getConnection();  
+	             ps=con.prepareStatement(  
+	                         "insert into student(SNNo,DmsNo,TypeOfPc,Location,OsInstalled,MsOffice,TypeOfNode,Ram) values (?,?,?,?,?,?,?,?,?)");  
+	            ps.setString(1,e.getSNNo());  
 	            ps.setString(2,e.getDmsNo());  
-	            ps.setString(3,e.getTypeOfPc());  
+	         ps.setString(3,e.getTypeOfPc());  
 	            ps.setString(4,e.getLocation());  
 	            ps.setString(5,e.getOsInstalled()); 
 	            ps.setString(6,e.getMsOffice());
 	            ps.setString(7,e.getTypeOfNode());
-	            ps.setInt(8,e.getRam()); 
-	            status=ps.executeUpdate();  
+	            ps.setString(8,e.getRam()); 
+	         status=ps.executeUpdate();  
 	              
 	            con.close();  
 	        }catch(Exception ex){ex.printStackTrace();}  
 	          
-	        return status;  
+	       return status;  
 	    }  
 	    public static int update(EmpDto e){  
 	        int status=0;  
 	        try{  
 	            Connection con=EmpDao.getConnection();  
-	            PreparedStatement ps=con.prepareStatement(  
-	                         "update student set Name=?,password=?,email=?,country=? ");  
-	            ps.setString(1,e.getName());  
-	            ps.setString(2,e.getPassword());  
-	            ps.setString(3,e.getEmail());  
-	            ps.setString(4,e.getCountry());  
-	            ps.setInt(5,e.getId());  
-	              
+	            PreparedStatement ps=con.prepareStatement("update user905 set name=?,password=?,email=?,country=? where id=?");  
+	            		   ps.setString(1,e.getSNNo());  
+	       	            ps.setString(2,e.getDmsNo());  
+	       	         ps.setString(3,e.getTypeOfPc());  
+	       	            ps.setString(4,e.getLocation());  
+	       	            ps.setString(5,e.getOsInstalled()); 
+	       	            ps.setString(6,e.getMsOffice());
+	       	            ps.setString(7,e.getTypeOfNode());
+	       	            ps.setString(8,e.getRam());
 	            status=ps.executeUpdate();  
 	              
 	            con.close();  
@@ -85,13 +91,13 @@ public class EmpDao {
 	          
 	        return status;  
 	    }  
-	    public static EmpDto getEmployeeByName(String Name){  
+	    public static EmpDto getEmployeeByDmsNo(String DmsNo){  
 	        EmpDto e=new EmpDto();  
 	          
 	        try{  
 	            Connection con=EmpDao.getConnection();  
 	            PreparedStatement ps=con.prepareStatement("select * from student");  
-	            ps.setString(1,Name);  
+	            ps.setString(2,DmsNo);  
 	            ResultSet rs=ps.executeQuery();  
 	            if(rs.next()){  
 	             //   e.setId(rs.getInt(1));  

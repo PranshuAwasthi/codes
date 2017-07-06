@@ -1,20 +1,26 @@
 package EmpDto;
 
 public class EmpDto {
-	private int SNNo,Ram;  
-		private String DmsNo,TypeOfPc,Location,OsInstalled,MsOffice,TypeOfNode;
+	
+	
+		//private int SNNo,Ram;  
+		private String SNNo,Ram,DmsNo,TypeOfPc,Location,OsInstalled,MsOffice,TypeOfNode;
 		
 		
-		public int getSNNo() {
+		
+		
+		public String getSNNo() {
 			return SNNo;
 		}
-		public void setSNNo(int sNNo) {
+		public void setSNNo(String sNNo) {
 			SNNo = sNNo;
 		}
-		public int getRam() {
+		public String getRam() {
 			return Ram;
 		}
-		
+		public void setRam(String ram) {
+			Ram = ram;
+		}
 		public String getDmsNo() {
 			return DmsNo;
 		}
@@ -30,9 +36,7 @@ public class EmpDto {
 		public String getLocation() {
 			return Location;
 		}
-		public void setRam(int ram) {
-			Ram = ram;
-		}
+		
 		public void setLocation(String location) {
 			Location = location;
 		}

@@ -3,16 +3,79 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+form {
+   
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+       box-sizing: border-box;
+}
+
+button {
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+   
+    cursor: pointer;
+    width: 50;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+}
+
+.container {
+    
+}
+
+span.psw {
+    float: right;
+    
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 40%;
+    }
+    
+    
+}
+}
+</style>
 </head>
-<body>
-<h1><font color="WHITE"><marquee  style="background:Green" behavior="alternate">Login</marquee></font></h1>
+<body background="Pic\Inventory.jpg;">
+<h1 style="color:Blue;"><center>DRDO Inventory Database</center></h1> 
 <form action="login" method="post">  
+
 <table> 
+<img src="Pic/download.png"  style="width:304px;height:228px;">
+
  <tr><td>Name:</td><td><input type="text" name="name" placeholder="type name" required=""/></td></tr>  
 <tr><td>Password:</td><td><input type="password" name="password" placeholder="type password" required=""/></td></tr>  
 </table>
 <button type="SUBMIT">SUBMIT</button>
 <button type="RESET">RESET</button>
+<input type="checkbox" checked="checked"> Remember me
+
+ <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
 </form>
 </body>
 </html>

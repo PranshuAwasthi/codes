@@ -3,9 +3,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-</head>
+<style>
+body {
+    background-image: url("Pic/DRDO-1.jpg");
+    background-repeat: no-repeat;
+    height:100%;
+     background-size: cover;
+}
+form { 
+    display: block;
+    margin-top: 0em;
+}
+</style>
+
 <body>  
-<h1><font color="WHITE"><marquee  style="background:Blue" behavior="alternate">Add New Inventory</marquee></font></h1>  
+<h1><font color="Green"><center>Add New Inventory</center></font></h1>
 <form action="SaveServlet" method="post">  
 <table> 
 <tr><td>SNNo:</td><td><input type="text" name="SN.NO" placeholder="SN.NO" required=""/></td></tr>  
@@ -20,9 +32,9 @@
 <tr><td colspan="2"><input type="submit" value="Save Inventory"/></td></tr>
 <tr><td colspan="2"><input type="reset" value="Reset"/></td></tr>  
 </table>  
-</form>  
- <br>  
-<a href="ViewServlet">view employees</a>  
+</form> 
+<br>  
+<h1><font color="Green"><center><a href="ViewServlet">View Inventory</a></font></center></h1> 
 </body>  
 </html>  
 
